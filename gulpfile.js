@@ -31,22 +31,6 @@ function cleanDist() {
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- <Картинки> -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-//function images() {
-    //return src('app/img/**/*')
-/*     .pipe(imagemin([
-        imagemin.gifsicle({interlaced: true}),
-        imagemin.mozjpeg({quality: 90, progressive: true}),
-        imagemin.optipng({optimizationLevel: 5}),
-        imagemin.svgo({
-            plugins: [
-                {removeViewBox: false},
-                {cleanupIDs: false}
-            ]
-        })
-    ]))
-    .pipe(dest('dist/img'))
-} */
-
 function cleanWebp() {
     return del('app/img/**/*.webp')
 }
@@ -62,25 +46,6 @@ function webpConvert() {
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- <Скрипты> -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-function scriptsLib() {
-    return src([
-        //'node_modules/swiper/swiper-bundle.min.js', // Слайдер
-        //'node_modules/shufflejs/dist/shuffle.min.js', // Tab Filter
-        //'node_modules/sticky-js/dist/sticky.min.js' // Sticky
-        //'node_modules/jquery/dist/jquery.js', // jQuery
-        //'node_modules/slick-carousel/slick/slick.min.js', // Слайдер (jQuery)
-        //'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js', // Попап (jQuery)
-        //'node_modules/wowjs/dist/wow.min.js', // Анимация
-        //'node_modules/nouislider/dist/nouislider.min.js', // Кастомный input[range]
-        //'node_modules/fslightbox/index.js', // Галерея
-        //'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
-    ])
-    .pipe(concat('libs.min.js'))
-    .pipe(uglify())
-    .pipe(dest('dist/js'))
-    .pipe(browserSync.stream())
-}
 
 function scriptsMin() {
     return src('app/js/main.js')
@@ -151,11 +116,6 @@ function stylesOriginal() {
 function CSSlibBuild() {
     return src([
         'node_modules/normalize.css/normalize.css',
-        //'node_modules/swiper/swiper-bundle.min.css', // Слайдер
-        //'node_modules/slick-carousel/slick/slick.css', // Слайдер (jQuery)
-        //'node_modules/magnific-popup/dist/magnific-popup.css' // Попап (jQuery)
-        //'node_modules/aos/dist/aos.css', // Анимация
-        //'node_modules/nouislider/dist/nouislider.css', // Кастомный input[range]
     ])
     .pipe(concat('_libs.scss'))
     .pipe(dest('app/scss'))
@@ -219,8 +179,6 @@ exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.scriptsMin = scriptsMin;
-exports.scriptsLib = scriptsLib;
-/* exports.images = images; */
 exports.cleanDist = cleanDist;
 exports.CSSlibBuild = CSSlibBuild;
 exports.ttf2woffConvert = ttf2woffConvert;
@@ -233,4 +191,4 @@ exports.htmlCompilation = htmlCompilation;
 
 exports.fonts = series(ttf2woffConvert, ttf2woff2Convert, fonts);
 exports.webp = series(cleanWebp, webpConvert);
-exports.default = parallel(/* images , */CSSlibBuild, styles, browsersync, watching/* , scriptsLib */, scriptsMin, scripts, htmlCompilation, json);
+exports.default = parallel(CSSlibBuild, styles, browsersync, watching, scriptsMin, scripts, htmlCompilation, json);
