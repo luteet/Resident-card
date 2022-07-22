@@ -64,9 +64,9 @@ section {
     display: inline-block;
     text-align: center;
     
-    padding: 20px 30px;
+    padding: 20px;
     @include _992 {
-        padding: 25px 40px;
+        padding: 25px 30px;
     }
 
     background: var(--accent);

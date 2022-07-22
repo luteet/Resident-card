@@ -610,7 +610,7 @@ section {
 ._btn {
   display: inline-block;
   text-align: center;
-  padding: 20px 30px;
+  padding: 20px;
   background: var(--accent);
   color: var(--dark);
   font-family: var(--title-font);
@@ -1558,7 +1558,7 @@ section {
   }
 
   ._btn {
-    padding: 25px 40px;
+    padding: 25px 30px;
   }
 
   ._btn._large {
