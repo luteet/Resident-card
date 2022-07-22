@@ -1,0 +1,109 @@
+.footer {
+    flex: 0 0 auto;
+    background-color: var(--light);
+
+    padding: 17px 0 21px 0;
+
+    // .footer__container
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        
+        @include _992 {
+            flex-direction: row;
+        }
+        
+    }
+
+    // .footer__logo
+
+    &__logo {
+        padding-right: 15px;
+        // .footer__logo--img
+
+        &--img {
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .footer__nav
+
+    &__nav {
+        max-width: 100%;
+        width: 100%;
+
+        @include _992 {
+            max-width: 650px;
+        }
+        // .footer__nav--list
+
+        &--list {
+            display: grid;
+            justify-items: start;
+            @media(min-width: 500px) {
+                grid-template-columns: auto auto;
+                justify-items: center;
+            }
+            
+
+            padding-top: 15px;
+            margin: 0 -10px;
+
+            @include _992 {
+                padding-top: 0;
+                justify-items: start;
+                grid-template-columns: auto auto;
+                width: 100%;
+            }
+
+            
+        }
+
+        // .footer__nav--item
+
+        &--item {
+            padding: 0 10px;
+            
+        }
+
+        // .footer__nav--link
+
+        &--link {
+        }
+    }
+
+    // .footer__link
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        padding: 10px 0;
+
+        font-family: var(--title-font);
+        line-height: 162%;
+        color: var(--dark);
+        // .footer__link--icon
+
+        &--icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            flex: 0 0 24px; width: 24px; height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+
+            margin-right: 11px;
+        }
+
+        // .footer__link--text
+
+        &--text {
+        }
+    }
+}

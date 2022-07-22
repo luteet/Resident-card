@@ -1,0 +1,135 @@
+.add-section {
+
+    // .add-section__container
+
+    &__container {
+    }
+
+    // .add-section__body
+
+    &__body {
+        background: var(--accent-2-dark);
+        
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+
+        @media(min-width: 1040px) {
+            flex-direction: row;
+            padding: 0 30px;
+        }
+        
+        padding: 0 15px;
+        border-radius: 25px;
+
+        position: relative;
+    }
+
+    // .add-section__info
+
+    &__info {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        @media(min-width: 1040px) {
+            max-width: 80%;
+
+            align-items: flex-start;
+        }
+
+        position: relative;
+        z-index: 2;
+    }
+
+    // .add-section__title
+
+    &__title {
+        text-align: center;
+        margin-top: 30px;
+
+        @include _992 {
+            font-size: 3.125rem;
+        }
+
+        & br {
+            display: none;
+        }
+
+        @media(min-width: 1040px) {
+            text-align: left;
+            & br {
+                display: initial;
+            }
+        }
+    }
+
+    // .add-section__text
+
+    &__text {
+        padding-top: 23px;
+
+        font-size: 1.125rem;
+        line-height: 136%;
+        color: var(--white);
+        text-align: center;
+        
+        @media(min-width: 1040px) {
+            text-align: left;
+            max-width: 630px;
+            font-size: 1.375rem;
+        }
+
+        & strong {
+            font-weight: 500;
+        }
+    }
+
+    // .add-section__btn
+
+    &__btn {
+        margin: 35px 0 32px 0;
+        @media(min-width: 1040px) {
+            margin: 35px 0 52px 0;
+        }
+    }
+
+    // .add-section__image
+
+    &__image {
+        
+        position: static;
+        
+        width: 100%; height: auto;
+
+        @media(min-width: 1040px) {
+            position: absolute;
+            right: 0; top: 0px;
+
+            width: min(400px, 27vw); height: 100%;
+        }
+        
+
+        &--wrapper {
+            width: 100%; height: 100%;
+            position: relative;
+            text-align: center;
+
+            
+        }
+        // .add-section__image--img
+
+        &--img {
+            
+            width: 100%; height: auto;
+            max-width: 400px;
+            @media(min-width: 1040px) {
+                position: absolute;
+                left: -30px; bottom: 0;
+                max-width: 100%;
+            }
+            object-fit: contain;
+        }
+    }
+}

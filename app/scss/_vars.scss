@@ -1,0 +1,56 @@
+
+
+$containerPadding: 15;
+
+$container: 1256 + ($containerPadding * 2);
+$containerMin: 1000 + ($containerPadding * 2);
+$containerLarge: 1340 + ($containerPadding * 2);
+
+:root {
+    --title-font: 'Gotham';
+    --main-font: 'Gilroy';
+    
+    --accent: #FFC14E;
+    --accent-light: #ffcb6a;
+    --accent-2: #6B6BFF;
+    --accent-2-dark: #3E3E94;
+
+    --dark: #232323;
+    --dark-2: #171717;
+    --light: #F9F9F9;
+    --light-2: #DFDFDF;
+
+    --white: #FFF;
+    --black: #000;
+
+    --container-padding: 15px;
+}
+
+@font-face {
+    @include font-include('Gilroy', 400, swap, normal, 'Gilroy-Regular');
+}
+
+@font-face {
+    @include font-include('Gilroy', 500, swap, normal, 'Gilroy-Medium');
+}
+
+@font-face {
+    @include font-include('Gilroy', 600, swap, normal, 'Gilroy-SemiBold');
+}
+
+@font-face {
+    @include font-include('Gilroy', 700, swap, normal, 'Gilroy-Bold');
+}
+
+
+@font-face {
+    @include font-include('Gotham', 400, swap, normal, 'Gotham-Book');
+}
+
+@font-face {
+    @include font-include('Gotham', 500, swap, normal, 'Gotham-Medium');
+}
+
+@font-face {
+    @include font-include('Gotham', 700, swap, normal, 'Gotham-Bold');
+}

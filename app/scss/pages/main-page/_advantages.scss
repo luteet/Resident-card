@@ -1,0 +1,114 @@
+.advantages {
+
+    // .advantages__container
+
+    &__container {
+    }
+
+    // .advantages__title
+
+    &__title {
+        
+    }
+
+    // .advantages__list
+
+    &__list {
+        padding-top: 38px;
+
+        display: flex;
+        flex-direction: column;
+
+        margin: -8px 0;
+    }
+
+    // .advantages__item
+
+    &__item {
+        padding: 8px 0;
+        // .advantages__item--body
+
+        &--body {
+            background: var(--light);
+
+            padding: 19px 15px;
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            
+            @include _768 {
+                flex-wrap: nowrap;
+            }
+        }
+
+        // .advantages__item--icon
+
+        &--icon {
+            border: 4px solid var(--accent-2);
+            border-radius: 15px;
+
+            width: 66px; height: 66px; flex: 0 0 66px;
+            position: relative;
+
+            margin-right: 20px;
+            @include _992 {
+                margin-right: 28px;
+                width: 86px; height: 86px; flex: 0 0 86px;
+            }
+        }
+
+        // .advantages__item--icon-img
+
+        &--icon-img {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%,-50%);
+
+            width: 65.23%; height: auto;
+        }
+
+        // .advantages__item--title
+
+        &--title {
+            
+            flex: 0 1 calc(100% - 100px);
+            padding: 10px 0;
+
+            @include _768 {
+                padding: 0 10px 0 0;
+                flex: 0 0 27%;
+            }
+
+            font-family: var(--title-font);
+            font-weight: 700;
+            font-size: 1.2rem;
+            @include _992 {
+                font-size: 1.375rem;
+            }
+            line-height: 127%;
+            color: var(--dark);
+
+            
+        }
+
+        // .advantages__item--text
+
+        &--text {
+            padding-top: 15px;
+            @include _768 {
+                padding-left: 15px; padding-top: 0;
+                border-left: 1px solid var(--light-2);
+            }
+
+            font-size: 1rem;
+            @include _992 {
+                padding-left: 20px;
+                font-size: 1.125rem;
+            }
+            line-height: 156%;
+            color: var(--dark);
+        }
+    }
+}

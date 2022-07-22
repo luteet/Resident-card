@@ -1,0 +1,20 @@
+@import 'mixin';
+@import 'null';
+@import 'libs';
+@import 'vars';
+@import 'global';
+@import 'font';
+
+@import 'main-sections/header';
+
+
+@import 'pages/main-page/intro';
+@import 'pages/main-page/advantages';
+@import 'pages/main-page/eu-advantages';
+@import 'pages/main-page/packages';
+@import 'pages/main-page/add-section';
+@import 'pages/main-page/reviews';
+@import 'pages/main-page/about-company';
+
+
+@import 'main-sections/footer';

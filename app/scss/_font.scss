@@ -1,0 +1,143 @@
+
+._main-title {
+    font-family: var(--title-font);
+    font-weight: 700;
+    line-height: 115%;
+    margin: 0;
+    color: var(--white);    
+
+    font-size: 2rem;
+
+    @include _768 {
+        font-size: 3rem;
+    }
+
+    @include _992 {
+        font-size: 3.5rem;
+        --underline-width: 21;
+    }
+
+    @media(min-width: 1100px) {
+        font-size: 4.0625rem;
+    }
+
+    --underline-width: 12;
+    --underline-intrinsic-width: 8;
+    --underline-width-scale: calc(var(--underline-width) / var(--underline-intrinsic-width));
+    --underline-padding-x: 0.02em;
+    --underline-cap-width: 4px;
+    --cap-image-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='8' viewBox='0 0 4 8' fill='none'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cline x1='4' y1='4' x2='152' y2='4' stroke='%236B6BFF' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='4' height='8' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    --cap-image-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='8' viewBox='0 0 4 8' fill='none'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cline x1='4' y1='-4' x2='152' y2='-4' transform='matrix(-1 0 0 1 4 8)' stroke='%236B6BFF' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='4' height='8' fill='white' transform='matrix(-1 0 0 1 4 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    --underline-offset-y: -5px;
+
+    & span {
+        display: inline-block;
+        padding: 0 calc(var(--underline-padding-x) + calc(var(--underline-cap-width) * var(--underline-width-scale)));
+    }
+
+    & strong {
+        display: inline;
+        
+        padding: 0 calc(var(--underline-padding-x) + calc(var(--underline-cap-width) * var(--underline-width-scale)));
+        box-decoration-break: clone;
+        background-repeat: no-repeat;
+        background-image:
+            linear-gradient(180deg, var(--accent-2), var(--accent-2)),
+            var(--cap-image-left),
+            var(--cap-image-right);
+        background-position-x:
+            calc(var(--underline-cap-width) * var(--underline-width-scale)),
+            0,
+            100%;
+        background-position-y: calc(100% - var(--underline-offset-y) * -1);
+        background-size:
+            calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px),
+            auto calc(var(--underline-width) * 1px),
+            auto calc(var(--underline-width) * 1px);
+
+    }
+}
+
+._title {
+    
+    font-family: var(--title-font);
+    font-weight: 700;
+
+    font-size: 1.125rem;
+
+    @include _768 {
+        font-size: 1.5rem;
+    }
+
+    @include _992 {
+        font-size: 1.875rem;
+    }
+    
+    &._min {
+
+    }
+}
+
+._section-title {
+
+    text-align: center;
+    font-family: var(--title-font);
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 110%;
+
+    --underline-width: 4;
+    --underline-intrinsic-width: 8;
+    --underline-width-scale: calc(var(--underline-width) / var(--underline-intrinsic-width));
+    --underline-cap-width: 4px;
+    --cap-image-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='8' viewBox='0 0 4 8' fill='none'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cline x1='4' y1='4' x2='152' y2='4' stroke='%23FFC14E' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='4' height='8' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    --cap-image-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='8' viewBox='0 0 4 8' fill='none'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cline x1='4' y1='-4' x2='152' y2='-4' transform='matrix(-1 0 0 1 4 8)' stroke='%23FFC14E' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='4' height='8' fill='white' transform='matrix(-1 0 0 1 4 0)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    --underline-offset-y: -8px;
+
+    @include _768 {
+        font-size: 3rem;
+
+        --underline-width: 6;
+        --underline-offset-y: 0px;
+    }
+    
+    @include _992 {
+        font-size: 3.4375rem;
+    }
+
+    &._light {
+        color: var(--white);
+    }
+
+    &._light mark {
+        color: var(--white);
+    }
+
+    & mark {
+        background: transparent;
+
+        display: inline;
+        
+        padding: 7px 0;
+        box-decoration-break: clone;
+        background-repeat: no-repeat;
+        background-image:
+            linear-gradient(180deg, var(--accent), var(--accent)),
+            var(--cap-image-left),
+            var(--cap-image-right);
+        background-position-x:
+            calc(var(--underline-cap-width) * var(--underline-width-scale)),
+            0,
+            100%;
+        background-position-y: calc(100% - var(--underline-offset-y) * -1);
+        background-size:
+            calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px),
+            auto calc(var(--underline-width) * 1px),
+            auto calc(var(--underline-width) * 1px);
+    }
+
+}
+
+._txt-center {
+    text-align: center;
+}
