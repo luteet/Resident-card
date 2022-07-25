@@ -1,11 +1,11 @@
 const { src, dest, watch, parallel, series } = require('gulp');
 
 const scss         = require('gulp-sass')(require('sass')),
+      fs           = require('fs'),
       concat       = require('gulp-concat'),
       browserSync  = require('browser-sync').create(),
       uglify       = require('gulp-uglify-es').default,
       autoprefixer = require('gulp-autoprefixer'),
-      /* imagemin     = require('gulp-imagemin'), */
       del          = require('del'),
       webp         = require('gulp-webp'),
       webpHTML     = require('gulp-webp-html'),
@@ -13,14 +13,15 @@ const scss         = require('gulp-sass')(require('sass')),
       minCSS       = require('gulp-cssmin'),
       mediaGroup   = require('gulp-group-css-media-queries'),
       ttf2woff     = require('gulp-ttf2woff'),
-      ttf2woff2    = require('gulp-ttf2woff2');
+      ttf2woff2    = require('gulp-ttf2woff2'),
+      zipArchive    = require('gulp-zip');
 
 function browsersync() {
     browserSync.init({
         server: {
             baseDir: 'dist/',
-            notify: false,
-        }
+        },
+        notify: false,
     })
 }
 
@@ -78,7 +79,7 @@ function htmlCompilation() {
 function htmlComponents() {
     return src('app/html/**/_*.html')
     .pipe(include())
-    .pipe(htmlCompilation())
+    .pipe(browserSync.stream())
 }
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- </HTML> -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -161,6 +162,27 @@ function audio() {
         .pipe(dest('dist/audio'))
 }
 
+let package = fs.readFileSync('package.json'),
+    name;
+
+    package = JSON.parse(package);
+    name = package.name;
+
+function zipStart() {
+    return src(['./**', '!./node_modules/**', '!./package-lock.json', `!./${name}.zip`])
+        .pipe(dest(`./${name}/${name}/`))
+}
+
+function zipEnd() {
+    return src(`./${name}/**`)
+        .pipe(zipArchive(`${name}.zip`))
+        .pipe(dest(`./`))
+}
+
+function zipDel() {
+    return del(`${name}`);
+}
+
 function watching() {
     watch(['app/scss/**/*.scss'], series(styles, stylesOriginal));
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
@@ -169,7 +191,6 @@ function watching() {
     watch(['app/audio/*'], audio);
     watch(['app/*.html'], htmlCompilation);
     watch(['app/html/**/_*.html'], htmlComponents);
-
 }
 
 
@@ -187,8 +208,12 @@ exports.webpConvert = webpConvert;
 exports.fonts = fonts;
 exports.htmlComponents = htmlComponents;
 exports.htmlCompilation = htmlCompilation;
+exports.zipStart = zipStart;
+exports.zipEnd = zipEnd;
+exports.zipDel = zipDel;
 
 
+exports.zip = series(zipStart, zipEnd, zipDel);
 exports.fonts = series(ttf2woffConvert, ttf2woff2Convert, fonts);
 exports.webp = series(cleanWebp, webpConvert);
-exports.default = parallel(CSSlibBuild, styles, browsersync, watching, scriptsMin, scripts, htmlCompilation, json);
+exports.default = parallel(CSSlibBuild, styles, watching, scripts, htmlCompilation, json, browsersync);
