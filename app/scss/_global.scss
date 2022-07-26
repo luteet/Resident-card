@@ -10,7 +10,7 @@ body {
     font-weight: 400;
     line-height: 150%;
 
-    //padding-right: var(--popup-padding);
+    padding-right: var(--popup-padding);
 
     &._active {
         overflow: hidden;
@@ -78,7 +78,7 @@ section {
 
     border-radius: 150px;
 
-    transition: background .2s ease-in-out, color .2s ease-in-out;
+    transition: background .2s ease-in-out, color .2s ease-in-out, transform .2s ease-in-out;
 
     &._large {
         padding: 25px 31px;
@@ -100,10 +100,20 @@ section {
     }
 
     &:hover {
-        background: var(--accent-light);
+        background: var(--light);
+        transform: scale(1.015);
+    }
+
+    &:active {
+        background: var(--light-2);
+        transform: scale(1);
     }
 
     &._light:hover {
-        background: var(--light-2);
+        background: var(--accent);
+    }
+
+    &._light:active {
+        background: var(--accent-dark);
     }
 }

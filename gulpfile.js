@@ -70,7 +70,7 @@ function scripts() {
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- <HTML> -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 function htmlCompilation() {
-    return src(['app/*.html'])
+    return src('app/*.html')
     .pipe(include())
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
@@ -190,7 +190,7 @@ function watching() {
     watch(['app/video/*'], video);
     watch(['app/audio/*'], audio);
     watch(['app/*.html'], htmlCompilation);
-    watch(['app/html/**/_*.html'], htmlComponents);
+    watch(['app/html/**/_*.html'], series(htmlComponents, htmlCompilation));
 }
 
 

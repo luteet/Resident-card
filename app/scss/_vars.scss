@@ -7,11 +7,12 @@ $containerMin: 1000 + ($containerPadding * 2);
 $containerLarge: 1340 + ($containerPadding * 2);
 
 :root {
-    --title-font: 'Gotham';
-    --main-font: 'Gilroy';
+    --title-font: 'Gotham', Helvetica, Arial, sans-serif;
+    --main-font: 'Gilroy', Helvetica, Arial, sans-serif;
     
     --accent: #FFC14E;
-    --accent-light: #ffcb6a;
+    --accent-light: #ffd27f;
+    --accent-dark: #dfa230;
     --accent-2: #6B6BFF;
     --accent-2-dark: #3E3E94;
 
@@ -19,6 +20,8 @@ $containerLarge: 1340 + ($containerPadding * 2);
     --dark-2: #171717;
     --light: #F9F9F9;
     --light-2: #DFDFDF;
+    --light-3: #F4F4F4;
+    --gray: #595959;
 
     --white: #FFF;
     --black: #000;

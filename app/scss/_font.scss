@@ -84,6 +84,9 @@
     font-family: var(--title-font);
     font-weight: 500;
     font-size: 2rem;
+    &._min {
+        font-size: 1.75rem;
+    }
     line-height: 110%;
 
     --underline-width: 4;
@@ -97,12 +100,20 @@
     @include _768 {
         font-size: 3rem;
 
+        &._min {
+            font-size: 2rem;
+        }
+
         --underline-width: 6;
         --underline-offset-y: 0px;
     }
     
     @include _992 {
         font-size: 3.4375rem;
+
+        &._min {
+            font-size: 2.1875rem;
+        }
     }
 
     &._light {
