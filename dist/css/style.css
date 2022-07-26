@@ -873,6 +873,11 @@ section {
   margin: 20px 15px 0 15px;
 }
 
+.feedback-popup__checkbox--input {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .feedback-popup__checkbox--label {
   position: relative;
   padding-left: 10px;
