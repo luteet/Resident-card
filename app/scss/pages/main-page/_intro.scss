@@ -18,10 +18,10 @@
 
     &__bg {
         grid-area: 1/1;
-        width: 100%;
-        padding-top: 50%;
+        width: 100%; height: 100%;
 
-        position: relative;
+        position: absolute;
+        left: 0; top: 0;
         z-index: -1;
         // .intro__bg--elem
 
@@ -57,10 +57,6 @@
         align-self: center;
 
         padding-top: 150px; padding-bottom: 50px;
-
-        @include _992 {
-            padding-top: 214px; padding-bottom: 165px;
-        }
 
     }
 

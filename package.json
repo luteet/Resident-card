@@ -27,6 +27,5 @@
     "gulp-zip": "^5.1.0",
     "normalize.css": "^8.0.1",
     "sass": "^1.45.0"
-  },
-  "dependencies": {}
+  }
 }

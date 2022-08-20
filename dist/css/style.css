@@ -1088,8 +1088,10 @@ section {
   -ms-grid-column: 1;
   grid-area: 1/1;
   width: 100%;
-  padding-top: 50%;
-  position: relative;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   z-index: -1;
 }
 
@@ -1829,11 +1831,6 @@ section {
   .intro {
     padding: 0px;
     margin-bottom: 10px;
-  }
-
-  .intro__container {
-    padding-top: 214px;
-    padding-bottom: 165px;
   }
 
   .intro__info {
