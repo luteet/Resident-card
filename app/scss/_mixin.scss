@@ -33,7 +33,7 @@ $maxWidth: 1650;
     font-display: $font_display;
     font-style: $font_style;
 
-    src: url('#{$font_src}.woff') format('woff'), url('#{$font_src}.woff') format('woff2');
+    src: url('#{$font_src}.woff') format('woff'), url('#{$font_src}.woff2') format('woff2');
 
 }
 

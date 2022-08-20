@@ -510,7 +510,7 @@ template {
   font-family: "Gilroy";
   font-display: swap;
   font-style: normal;
-  src: url("Gilroy-Regular.woff") format("woff"), url("Gilroy-Regular.woff") format("woff2");
+  src: url("Gilroy-Regular.woff") format("woff"), url("Gilroy-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -518,7 +518,7 @@ template {
   font-family: "Gilroy";
   font-display: swap;
   font-style: normal;
-  src: url("Gilroy-Medium.woff") format("woff"), url("Gilroy-Medium.woff") format("woff2");
+  src: url("Gilroy-Medium.woff") format("woff"), url("Gilroy-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -526,7 +526,7 @@ template {
   font-family: "Gilroy";
   font-display: swap;
   font-style: normal;
-  src: url("Gilroy-SemiBold.woff") format("woff"), url("Gilroy-SemiBold.woff") format("woff2");
+  src: url("Gilroy-SemiBold.woff") format("woff"), url("Gilroy-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -534,7 +534,7 @@ template {
   font-family: "Gilroy";
   font-display: swap;
   font-style: normal;
-  src: url("Gilroy-Bold.woff") format("woff"), url("Gilroy-Bold.woff") format("woff2");
+  src: url("Gilroy-Bold.woff") format("woff"), url("Gilroy-Bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -542,7 +542,7 @@ template {
   font-family: "Gotham";
   font-display: swap;
   font-style: normal;
-  src: url("Gotham-Book.woff") format("woff"), url("Gotham-Book.woff") format("woff2");
+  src: url("Gotham-Book.woff") format("woff"), url("Gotham-Book.woff2") format("woff2");
 }
 
 @font-face {
@@ -550,7 +550,7 @@ template {
   font-family: "Gotham";
   font-display: swap;
   font-style: normal;
-  src: url("Gotham-Medium.woff") format("woff"), url("Gotham-Medium.woff") format("woff2");
+  src: url("Gotham-Medium.woff") format("woff"), url("Gotham-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -558,7 +558,7 @@ template {
   font-family: "Gotham";
   font-display: swap;
   font-style: normal;
-  src: url("Gotham-Bold.woff") format("woff"), url("Gotham-Bold.woff") format("woff2");
+  src: url("Gotham-Bold.woff") format("woff"), url("Gotham-Bold.woff2") format("woff2");
 }
 
 html,
